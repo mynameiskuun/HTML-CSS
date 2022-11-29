@@ -1,0 +1,1 @@
+$(".colorPicker div").eq(0).css({"background-color":"#7d5947"});

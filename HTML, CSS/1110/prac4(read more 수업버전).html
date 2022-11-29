@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #dots {
+        display: none;
+      }
+      #mre {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>보여주기</h1>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias quod cum,
+      neque dolorem placeat, suscipit temporibus nam id minima beatae tempora!
+      Illo velit delectus reprehenderit ut tempore neque placeat provident.Lorem
+      ipsum dolor sit, amet
+      <span id="mre">...</span>
+      <span id="dots"
+        >consectetur adipisicing elit. Alias quod cum, neque dolorem placeat,
+        suscipit temporibus nam id minima beatae tempora! Illo velit delectus
+        reprehenderit ut tempore neque placeat provident.Lorem ipsum dolor sit,
+        amet consectetur adipisicing elit. Alias quod cum, neque dolorem
+        placeat, suscipit temporibus nam id minima beatae tempora! Illo velit
+        delectus reprehenderit ut tempore neque placeat provident.</span
+      ><br /><!-- <button
+        id="myBtn"
+        value="read more"
+        onclick="myFunction()"
+      ></button> -->
+      <input
+        type="button"
+        id="myBtn"
+        value="read more"
+        onclick="myFunction()"
+      />
+    </p>
+
+    <script>
+      function myFunction() {
+        let dots = document.getElementById("dots");
+        let moreText = document.getElementById("more");
+        let btnText = document.getElementById("myBtn");
+
+        if (dots.style.display == "none") {
+          mre.style.display = "none";
+          dots.style.display = "inline";
+          myBtn.value = "read less";
+          moreText.style.display = "none";
+        } else {
+          mre.style.display = "inline";
+          dots.style.display = "none";
+          myBtn.value = "read more";
+          moreText.style.display = "inline";
+        }
+      }
+    </script>
+  </body>
+</html>

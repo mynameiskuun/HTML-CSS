@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상요소</title>
+    <style>
+      body {
+        margin: 20px;
+        padding: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        background: #555;
+      }
+      .slide {
+        width: 700px;
+        position: relative;
+        margin: 50px 0;
+        overflow: hidden;
+        /* 보이지 않게 하는 속성 */
+        text-align: center;
+        border: 1px solid red;
+      }
+      .slide a {
+        display: block;
+        position: relative;
+        float: left;
+        width: 20%;
+        padding: 16px 0 38px;
+        text-decoration: none;
+        color: white;
+        transition: 0.6s;
+      }
+
+      .slide a:hover {
+        color: #8ac007;
+      }
+      .slide .slide-effect /* 노란 공 */ {
+        position: absolute;
+        left: -15%;
+        transition: 0.6s;
+        bottom: 15px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #8ac007;
+        margin-left: -6px;
+      }
+      .slide:after /* 노란 직선 */ {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        height: 1px;
+        background: #8ac007;
+      }
+      .slide a:after /* 마우스를 댔을때 형성되는 공 */ {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: 18px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #8ac007;
+        margin-left: -2px;
+      }
+      /* 가상요소 만들때 중요한 요소 content:"", display : block*/
+      /* 가상요소 nav:after의 속성인 absolute의 기준은 nav가 됨. */
+      .slide a:nth-child(1):hover ~ .slide-effect {
+        left: 10%;
+      }
+      .slide a:nth-child(2):hover ~ .slide-effect {
+        left: 30%;
+      }
+      .slide a:nth-child(3):hover ~ .slide-effect {
+        left: 50%;
+      }
+      .slide a:nth-child(4):hover ~ .slide-effect {
+        left: 70%;
+      }
+      .slide a:nth-child(5):hover ~ .slide-effect {
+        left: 90%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide">
+      <a href="#">HTML</a>
+      <a href="#">CSS</a>
+      <a href="#">JAVASCRIPT</a>
+      <a href="#">jQuery</a>
+      <a href="#">React</a>
+      <div class="slide-effect"></div>
+    </div>
+  </body>
+</html>
